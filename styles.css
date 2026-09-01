@@ -84,7 +84,7 @@ a { color: inherit; }
   -webkit-text-fill-color: var(--turquoise-bright);
   color: var(--turquoise-bright);
   filter: drop-shadow(0 0 4px rgba(31, 168, 158, 0.6));
-  animation: heartbeat 2.2s ease-in-out infinite;
+  animation: glowPulse 3.4s ease-in-out infinite;
 }
 
 .brand-text h1 {
@@ -202,24 +202,29 @@ a { color: inherit; }
 }
 
 .hero-sparkles .spark {
-  color: var(--gold-bright);
-  filter: drop-shadow(0 0 6px rgba(230, 192, 120, 0.75));
-  animation: twinkle 3s ease-in-out infinite;
+  opacity: 0.75;
+  animation: gleam 6s ease-in-out infinite;
 }
 
 .hero-sparkles .heart {
-  color: var(--turquoise-bright);
-  opacity: 0.45;
-  filter: drop-shadow(0 0 6px rgba(31, 168, 158, 0.5));
-  animation: floatHeart 9s ease-in-out infinite;
+  opacity: 0.5;
+  animation: drift 13s ease-in-out infinite;
 }
 
-.hero-sparkles .s1 { top: 18%; right: 12%; font-size: 20px; animation-delay: 0s; }
-.hero-sparkles .s2 { top: 62%; right: 22%; font-size: 14px; animation-delay: 0.8s; }
-.hero-sparkles .s3 { top: 40%; right: 6%;  font-size: 26px; animation-delay: 1.6s; }
-.hero-sparkles .h1 { bottom: 14%; right: 32%; font-size: 16px; animation-delay: 0s; }
-.hero-sparkles .h2 { bottom: 26%; right: 9%;  font-size: 22px; animation-delay: 2.4s; }
-.hero-sparkles .h3 { top: 12%;   right: 30%;  font-size: 12px; animation-delay: 4s; }
+/* palette-tied tints */
+.hero-sparkles .s1 { color: var(--gold-bright);      filter: drop-shadow(0 0 7px rgba(230, 192, 120, 0.6)); }
+.hero-sparkles .s2 { color: var(--turquoise-bright); filter: drop-shadow(0 0 7px rgba(31, 168, 158, 0.5)); }
+.hero-sparkles .s3 { color: var(--gold-line);        filter: drop-shadow(0 0 8px rgba(216, 184, 119, 0.55)); }
+.hero-sparkles .h1 { color: var(--turquoise-bright); filter: drop-shadow(0 0 6px rgba(31, 168, 158, 0.45)); }
+.hero-sparkles .h2 { color: var(--gold);             filter: drop-shadow(0 0 6px rgba(184, 134, 63, 0.45)); }
+.hero-sparkles .h3 { color: var(--silver-deep);      filter: drop-shadow(0 0 6px rgba(151, 161, 167, 0.45)); }
+
+.hero-sparkles .s1 { top: 18%; right: 12%; font-size: 20px; animation-duration: 6.5s;  animation-delay: -1.2s; }
+.hero-sparkles .s2 { top: 62%; right: 22%; font-size: 14px; animation-duration: 5.4s;  animation-delay: -3.1s; }
+.hero-sparkles .s3 { top: 40%; right: 6%;  font-size: 26px; animation-duration: 7.6s;  animation-delay: -0.4s; }
+.hero-sparkles .h1 { bottom: 14%; right: 32%; font-size: 16px; animation-duration: 12s; animation-delay: -2s; }
+.hero-sparkles .h2 { bottom: 26%; right: 9%;  font-size: 22px; animation-duration: 15s; animation-delay: -7s; }
+.hero-sparkles .h3 { top: 12%;   right: 30%;  font-size: 12px; animation-duration: 14s; animation-delay: -11s; }
 
 @media (max-width: 560px) {
   .hero-sparkles .s2, .hero-sparkles .h1, .hero-sparkles .h3 { display: none; }
@@ -251,8 +256,9 @@ a { color: inherit; }
   content: " ✦";
   color: var(--gold-bright);
   filter: drop-shadow(0 0 5px rgba(230, 192, 120, 0.7));
-  animation: twinkle 3.5s ease-in-out infinite;
+  animation: gleam 6.5s ease-in-out infinite;
   display: inline-block;
+  transform-origin: center;
 }
 
 .catalog-head p {
@@ -502,7 +508,7 @@ a { color: inherit; }
 .footer-heart {
   color: var(--turquoise-bright);
   filter: drop-shadow(0 0 5px rgba(31, 168, 158, 0.55));
-  animation: heartbeat 2.2s ease-in-out infinite;
+  animation: glowPulse 4s ease-in-out infinite;
 }
 
 /* ---------- Keyframes ---------- */
@@ -512,11 +518,9 @@ a { color: inherit; }
   50% { background-position: 100% 50%; }
 }
 
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.28); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.18); }
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.12); opacity: 1; }
 }
 
 @keyframes sweep {
@@ -529,14 +533,14 @@ a { color: inherit; }
   to { transform: rotate(360deg); }
 }
 
-@keyframes twinkle {
-  0%, 100% { transform: scale(0.7) rotate(0deg); opacity: 0.25; }
-  50% { transform: scale(1.15) rotate(90deg); opacity: 1; }
+@keyframes gleam {
+  0%, 100% { transform: scale(0.92) rotate(-8deg); opacity: 0.55; }
+  50% { transform: scale(1.08) rotate(8deg); opacity: 1; }
 }
 
-@keyframes floatHeart {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-  50% { transform: translateY(-16px) scale(1.1); opacity: 0.6; }
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-5deg); opacity: 0.4; }
+  50% { transform: translate3d(-7px, -15px, 0) rotate(5deg); opacity: 0.62; }
 }
 
 @media (max-width: 560px) {
