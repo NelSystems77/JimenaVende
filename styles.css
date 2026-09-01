@@ -493,6 +493,12 @@ a { color: inherit; }
   font-size: 12.5px;
 }
 
+.footer-logo {
+  border-radius: 5px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 1px var(--gold-line), 0 4px 10px -4px rgba(34, 49, 56, 0.4);
+}
+
 .footer-heart {
   color: var(--turquoise-bright);
   filter: drop-shadow(0 0 5px rgba(31, 168, 158, 0.55));
